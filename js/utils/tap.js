@@ -262,7 +262,9 @@ ionic.tap = {
     if (ele && ele.nodeType === 1) {
       var element = ele;
       while (element) {
-        if ((element.dataset ? element.dataset.tapDisabled : element.getAttribute && element.getAttribute('data-tap-disabled')) == 'true') {
+        //if ((element.dataset ? element.dataset.tapDisabled : element.getAttribute && element.getAttribute('data-tap-disabled')) == 'true') {
+        if( element.getAttribute('data-tap-disabled') == 'true' || (element.dataset && element.dataset.tapDisabled == 'true' )) {
+
           return true;
         }
         element = element.parentElement;
